@@ -11,15 +11,18 @@
 	color: #fff;
 }
 html{
-	overflow-x: hidden;
+	overflow: hidden;
+	overflow-y: scroll;
 }
 body {
 	font-size: 16px;
 	min-width: 320px;
+	min-height: 100vh;
 	position: relative;
 	line-height: 1.65;
 	font-family: $default-font;
 	overflow-x: hidden;
+	overflow-y: hidden;
 	color: $text;
 	-webkit-font-smoothing: antialiased;
 	input, textarea {
@@ -60,6 +63,13 @@ header{
 	.logo{
 		font-weight: bold;
 		letter-spacing: 1px;
+		a{
+			color: $text;
+			&:hover{
+				color: $text;
+				text-decoration: none;
+			}
+		}
 	}
 	nav{
 		width: 100%;
@@ -137,9 +147,6 @@ header{
 	}
 	.head{
 		color: white;
-		font-size: $fz_head;
-		font-family: $default-font;
-		letter-spacing: 1px;
 	}
 	.uk-overlay{
 		background-color: rgba(black, .6);
@@ -148,12 +155,96 @@ header{
 	}
 }
 
+.head{
+	font-size: $fz_head;
+	font-family: $default-font;
+	letter-spacing: 1px;
+}
+
 
 .hamburger{
 	display: none;
 	padding: 0;
 	&:active, &:focus{
 		outline: none;
+	}
+}
+
+.uk-slidenav{
+	color: white;
+	&:hover{
+		color: white;
+	}
+	svg{
+		zoom: 1.5;
+	}
+}
+
+// .product-slider{
+// 	li{
+// 		padding-top: 100%;
+// 	}
+// }
+
+.product-content.content{
+	margin-top: 0;
+}
+
+.content{
+	margin-top: 25px;
+	margin-bottom: 100px;
+	*:not(.head){
+		font-family: $second-font;
+		font-size: $fz_text;
+		letter-spacing: 1px;
+	}
+	a{
+		color: $text;
+		position: relative;
+		&:after{
+			content: '';
+			position: absolute;
+			display: block;
+			bottom: -3px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #000;
+			transition: all .5s ease;
+		}
+		&:hover{
+			color: $text;
+			text-decoration: none;
+			&:after{
+				bottom: 0px;
+			}
+		}
+	}
+	ul{
+		padding: 0;
+		li{
+			list-style-type: none;
+			padding-left: 20px;
+			position: relative;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				width: 10px;
+				height: 1px;
+				background-color: #000;
+				left: 0;
+				top: 12px;
+			}
+		}
+	}
+}
+
+.news-item{
+	.content{
+		max-width: 690px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 }
 
